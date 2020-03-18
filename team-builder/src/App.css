@@ -1,0 +1,39 @@
+body {
+  background-color: beige;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+.form {
+  border: solid blueviolet;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding: 5px;
+  border-radius: 4px;
+}
+.label {
+  /* border: solid blue; */
+  text-align: start;
+  font-size: 18px;
+
+}
+button {
+  background-color: darkslateblue;
+  color: wheat;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+.box {
+  margin: 10px 5px;
+  box-sizing: border-box;
+  padding: 10px 15px;
+}
+

@@ -1,24 +1,27 @@
 import React, {useState} from "react";
 
-const TeamForm = props => {
+export default function TeamForm(props) {
     
     const [state, setState] = useState({name:"", email:""});
 
     const newMember = (e) => {
         setState({...state, [e.target.name]:e.target.value})
+        console.log(state)
         }
+    
        
-        // const formSubmitHandler = event => {
-        //     event.preventDefault();
+        const formSubmitHandler = event => {
+            event.preventDefault();
         
-        //     props.addNote({
-        //       ...formState,
-        //       id: Date.now()
-        //     });
+            props.updateTeam({
+              ...state,
+              id: Date.now()
+            });
+        }
         
     return (
         <form className="form" 
-        // onSubmit={formSubmitHandler}
+        onSubmit={formSubmitHandler}
         >
            <label htmlFor="name" className="label">Name:</label>
            <input name="name" onChange={newMember} type="text" className="box" placeholder="Please enter your name"></input> 
@@ -28,5 +31,3 @@ const TeamForm = props => {
         </form>
     )
 }
-
-export default TeamForm;

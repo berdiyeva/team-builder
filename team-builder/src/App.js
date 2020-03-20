@@ -4,27 +4,32 @@ import TeamMember from './TeamMember'
 import './App.css';
 
 
-function App() {
-  const [teamState, setTeamState] = useState([
+export default function App() {
+  const teamState =[
     {id: 1, 
     name: 'John Oliver',
     email: 'johnoliver@gmail.com'}
-  ]);
+  ];
+  
 
+  function newMember (member) {
+    console.log(member)
+    teamState.push(member);
+    console.log(teamState)
+  }
 
+  
   return (
     <div className="App"> 
       <h1>Team Mermbers</h1>
       {teamState.map(teamMember => (
          <h1>{teamMember.name}</h1>
-      
+          
       ))}
-      <TeamForm updateTeam={setTeamState} />
+      <TeamForm updateTeam={newMember} team={teamState} />
       <TeamMember people = {teamState}/>
     </div>
   );
   
 }
-console.log(App)
-
-export default App;
+// console.log(App) App;
